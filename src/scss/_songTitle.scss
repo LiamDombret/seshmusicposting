@@ -1,0 +1,23 @@
+//SONGTITLE
+
+#songtitle-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto;
+  min-height: 60px;
+  width: 100%;
+}
+
+#songtitle {
+  font-size: 20px;
+  color: $background;
+  opacity: 1;
+  font-weight: 700;
+  font-family: $font;
+  text-transform: uppercase;
+  color: black;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}

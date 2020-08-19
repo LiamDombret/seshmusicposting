@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SESH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.png" type="image/x-icon"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+  <div class="overlay sidebar-overlay top"></div>
+  <div class="overlay sidebar-overlay bottom"></div>
+  <div class="overlay sidebar">
+    <div id="sidebar-header"><h2>History</h2><div id="cancel" class="controls-image"></div></div>
+    <div id="sidebar-content"></div>
+  </div>
+  <div id="sidebar-toggle-wrapper" class="overlay"><span id="sidebar-toggle">Show History</span></div>
+  <div id="borgar" class="overlay controls-image sidebar-toggle"></div>
+  <div class="main">
+    <div id="main-title-wrapper"><img id="glitch1" src="img/glitch1.png"><div id="main-title"></div><img id="erase" src="img/glitcherase.png"><img id="wave" src="img/glitchwave.png"><img id="blur" src="img/glitchblur.png"></div>
+    <div class="form-overlay-wrapper">
+      <form method="post" id="pass-form">
+        <input type="password" name="pass" id="password">
+      </form>
+      <form method="post" id="link-form">
+        <input type="text" name="link" id="link"><input type="submit" value="Submit" id="submit">
+      </form>
+      <span id="message"></span>
+    </div>
+    <div id="videoPlayer">
+      <div id="songtitle-wrapper"><span id="songtitle">title</span></div>
+      <div class="toggled" id="featured"></div>
+      <div id="controls-wrapper" class="controls-grid">
+        <div class="controls-overlay-wrapper" id="first">
+          <div id="screenGlitched" class="controls-image glitched"></div>
+          <div id="screen" class="controls-image toggle off"></div>
+        </div>
+        <div class="controls-overlay-wrapper">
+          <div id="playPauseGlitched" class="controls-image glitched"></div>
+          <div id="playPause" class="controls-image toggle off"></div>
+        </div>
+        <div class="controls-overlay-wrapper">
+          <div id="nextGlitched" class="controls-image glitched"></div>
+          <div id="next" class="controls-image"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blur">  <div class="underlay-change"></div>
+  <div class="underlay"></div></div>
+
+</body>
+</html>

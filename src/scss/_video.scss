@@ -1,0 +1,13 @@
+//VIDEO
+
+#featured {
+  opacity: 0;
+  background-color: $background;
+  box-shadow: $shadow;
+  max-height: 0;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 100%;
+  height: $featuredHeight;
+}

@@ -1,0 +1,27 @@
+//TITLE
+
+#main-title-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto 40px;
+  max-height: 200px;
+  #main-title, img, #glitch1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    margin: 0 auto 30px;
+    width: 80%;
+    max-height: 200px;
+    background-size: 100%;
+  }
+  #main-title {
+    opacity: 0;
+    background-image: url('../img/title.png');
+    background-repeat:no-repeat;
+    background-position: center;
+
+  }
+  #blur, #wave, #erase {
+    opacity: 0;
+    background-blend-mode: screen;
+  }
+}

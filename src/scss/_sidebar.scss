@@ -1,0 +1,147 @@
+.sidebar {
+  z-index: 2;
+  width: $sidebarWidth;
+  background-color: rgba(0,0,0,0.9);
+  border-right: 1px solid $border;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  box-shadow: $shadow;
+  overflow-x: hidden;
+  margin-left: (-1 * $sidebarWidth);
+  .thumbnail {
+    border-radius: 4px;
+    height: 120px;
+    width: 220px;
+    background-size: 120% 170%;
+    background-position: center;
+    border: 2px solid transparent;
+    &:hover {
+      border: 2px solid rgba(255,255,255,.7);
+      transition: all .2s ease;
+      box-shadow: 0px 0px 10px rgba(255,255,255,0.2);
+    }
+  }
+}
+
+#sidebar-content {
+  width: 230px;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+h2 {
+  font-size: 36px;
+  color: $text;
+  text-align: left;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+
+#sidebar-header {
+  border-bottom: 1px solid $border;
+  padding: 5px;
+  background-color: $background;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  min-height: 60px;
+}
+
+.sidebarItem {
+  margin: 30px 0;
+  opacity: 1;
+  h3 {
+    font-size: 16px;
+    color: $text;
+    margin-bottom: 8px;
+  }
+  h4 {
+    color: $text;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+  a {
+    text-decoration: none;
+    &:visited {
+      color: pink;
+    }
+  }
+}
+
+.overlay {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+
+#cancel {
+  background-image: url("../img/cancel.png");
+  display: none;
+  width: 60%;
+}
+
+#borgar {
+  background-image: url("../img/borgar.png");
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  margin: 15px;
+  z-index: 0;
+  display: none;
+}
+
+#sidebar-toggle-wrapper {
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: top left 0;
+  width: 100vh;
+  left: 3%;
+  text-align: center;
+  display: none;
+  justify-content: flex-start;
+  flex-direction: column;
+  pointer-events: none;
+  span {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+    font-weight: 700;
+    display: none;
+    cursor: pointer;
+    pointer-events: all;
+    &:hover {
+      text-shadow: $shadow;
+      transition: all .5s ease !important;
+    }
+  }
+}
+
+.sidebar-overlay {
+  z-index: 3;
+  width: $sidebarWidth;
+  height: 20vh;
+  pointer-events: none;
+  display: none;
+  opacity: 0;
+  margin-left: -15%;
+}
+
+.top {
+  top: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0), $lightbg);
+}
+
+.bottom {
+  top: 80vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), $lightbg);
+}

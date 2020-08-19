@@ -1,0 +1,72 @@
+//FORM
+
+.form-overlay-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#message, #pass-form, #link-form {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+#message {
+  display: block;
+  margin-top: 0 auto;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+}
+
+form {
+  height: 30px;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+#pass-form {
+  display: flex;
+  input[type=password] {
+    border-radius: 4px;
+    background-color: $text;
+    color: $background;
+    width: 100%;
+    padding: 0 0 0 8px;
+  }
+}
+
+#link-form {
+  display: none;
+  z-index: 1;
+}
+
+input[type=text] {
+  border-radius: 4px 0px 0px 4px;
+  background-color: $lightbg;
+  border: $border;
+  border-right: none;
+  width: 70%;
+  padding: 0 0 0 8px;
+  color: white;
+}
+
+input[type=submit] {
+  background-color: $background;
+  border-radius: 0px 4px 4px 0px;
+  margin: 0;
+  padding: 0 !important;
+  border: $border;
+  width: 30%;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  &:hover {
+    background-color: lighten($lightbg, 10);
+    transition: .3s ease;
+  }
+}

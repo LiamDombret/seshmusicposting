@@ -1,0 +1,88 @@
+//DESKTOP
+@media screen and (min-width: 1081px) {
+  $sidebarWidth: 15%;
+  $featuredHeight: 500px;
+  #controls-wrapper {
+    grid-template-columns: 35% auto auto auto 35%;
+  }
+
+  #form-overlay-wrapper {
+    width: 50%;
+  }
+
+  #link-form, #pass-form {
+    width: 25%;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+
+  input[type=submit] {
+    width: 20%;
+  }
+
+  @keyframes slideIn {
+    0% {
+      margin-left: ($sidebarWidth * -1);
+    }
+    100% {
+      margin-left: 0%;
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      margin-left: 0%;
+    }
+    100% {
+      margin-left: ($sidebarWidth * -1);
+    }
+  }
+  .sidebar-overlay-top, .sidebar-overlay {
+    width: $sidebarWidth;
+  }
+  .sidebar {
+    width: $sidebarWidth;
+    margin-left: ($sidebarWidth * -1);
+  }
+  #sidebar-toggle-wrapper {
+    display: flex;
+  }
+  #featured {
+    width: 50%;
+    height: $featuredHeight;
+  }
+  @keyframes toggleFeaturedOn {
+    0% {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0px;
+    }
+    100% {
+      max-height: $featuredHeight;
+      opacity: 1;
+      margin-bottom: 20px;
+    }
+  }
+
+  @keyframes toggleFeaturedOff {
+    0% {
+      max-height: $featuredHeight;
+      opacity: 1;
+      margin-bottom: 20px;
+    }
+    100% {
+      max-height: 0px;
+      opacity: 0;
+      margin-bottom: 0px;
+    }
+  }
+  #songtitle {
+    font-size: 24px !important;
+  }
+  #songtitle-wrapper {
+    width: 40% !important;
+    min-height: 100px !important;
+  }
+}

@@ -1,0 +1,63 @@
+//CONTROLS
+
+.controls-grid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 10% auto auto auto 10%;
+}
+
+#first {
+  grid-column-start: 2;
+}
+
+.controls-image {
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.controls-overlay-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  .controls-image {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    width: 50%;
+  }
+}
+
+
+
+#screen {
+  background-image: url("../img/screen.png");
+}
+
+#playPause {
+  background-image: url("../img/playPause.png");
+}
+
+#next {
+  background-image: url("../img/next.png");
+}
+
+#screenGlitched {
+  background-image: url("../img/screenglitch.png");
+}
+
+#playPauseGlitched {
+  background-image: url("../img/playPauseglitch.png");
+}
+
+#nextGlitched {
+  background-image: url("../img/nextglitch.png");
+}
+
+.glitched {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}

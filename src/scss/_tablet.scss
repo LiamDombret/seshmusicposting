@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+  $sidebarWidth: 40%;
+  @keyframes slideIn {
+    0% {
+      margin-left: ($sidebarWidth * -1);
+    }
+    100% {
+      margin-left: 0%;
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      margin-left: 0%;
+    }
+    100% {
+      margin-left: ($sidebarWidth * -1);
+    }
+  }
+  .sidebar-overlay-top, .sidebar-overlay {
+    width: $sidebarWidth;
+  }
+  .sidebar {
+    width: $sidebarWidth;
+    margin-left: ($sidebarWidth * -1);
+  }
+}
