@@ -139,7 +139,7 @@ function loadScreen() {
     $('#borgar').css('display', 'block');
     $('#cancel').css('display', 'block');
   } else {
-    $('#sidebar-toggle').css('display', 'block');
+    $('#text-toggle').css('display', 'block');
   }
   $('.main').css("animation", "changeBg 1s ease");
   $('#main-title').css("animation", "fadeEffectIn 1s ease");
@@ -235,7 +235,7 @@ function insertData(videoLink, videoId, videoThumb, videoTitle) {
           cache: false,
           success: function(response)
           {
-            fetchNewContent();
+            //fetchNewContent();
             $('#message').html('Schefke!');
           }, error: function() {
             $('#message').html('');
@@ -255,16 +255,16 @@ let margin;
 let left2;
 
 function sidebarAnim() {
-  if (!$('#sidebar-toggle').hasClass('on')) {
-    $('#sidebar-toggle').addClass('on');
+  if (!$('.sidebar-toggle').hasClass('on')) {
+    $('.sidebar-toggle').addClass('on');
     $('.sidebar').css("animation", "slideIn .5s ease-out forwards");
     $('.sidebar-overlay').show();
     $('.sidebar-overlay').css("animation", "slideIn .5s ease-out forwards");
     $('.top').css("animation", "slideIn .5s ease-out forwards");
     margin = ($('.top').css("margin-left"));
-    left = $('#sidebar-toggle-wrapper').css("left");
+    left = $('.sidebar-toggle-wrapper').css("left");
     $('#sidebar-toggle-wrapper').css("animation", "toggleAnim .5s ease-out forwards");
-    $('#sidebar-toggle').html("Hide History")
+    $('#text-toggle').html("Hide History")
     $('.bottom').css("opacity", "1");
     setTimeout(function() {
       left2 = $('#sidebar-toggle-wrapper').css("left");
@@ -278,12 +278,12 @@ function sidebarAnim() {
       $('#sidebar-toggle-wrapper').css("animation", "");
     }, 500);
   } else {
-    $('#sidebar-toggle').removeClass('on');
+    $('.sidebar-toggle').removeClass('on');
     $('.sidebar').css("animation", "slideOut .5s ease-out forwards");
     $('.sidebar-overlay').css("animation", "slideOut .5s ease-out forwards");
     $('.top').css("animation", "slideOut .5s ease-out forwards");
     $('#sidebar-toggle-wrapper').css("animation", "toggleAnimOff .5s ease-out forwards");
-    $('#sidebar-toggle').html("Show History")
+    $('#text-toggle').html("Show History")
     $('.sidebar-overlay').css("opacity", "inherit");
     $('.top').css("opacity", "inherit");
     setTimeout(function() {
@@ -297,7 +297,7 @@ function sidebarAnim() {
       $('.top').css("margin-left", margin);
 
       $('#sidebar-toggle-wrapper').css("animation", "");
-      $('#sidebar-toggle-wrapper').css("left", left);
+      $('#sidebar-toggle-wrapper').css("left", left2);
     }, 500);
   }
 }
@@ -473,7 +473,6 @@ function getRandomVideo(isAutoplay) {
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('featured', {
-    playerlets: {'autoplay': 1},
     events: {
       onReady: onPlayerReady,
       onStateChange: onPlayerStateChange
@@ -507,7 +506,16 @@ function onPlayerStateChange(e) {
 
 
 $(document).ready(function() {
+  Pusher.logToConsole = true;
 
+  var pusher = new Pusher('2fc153e44bf8f29c4735', {
+    cluster: 'eu'
+  });
+
+  var channel = pusher.subscribe('my-channel');
+  channel.bind('my-event', function() {
+    fetchNewContent();
+  });
   animateLogo();
 
   logo = setInterval(function(){
@@ -527,7 +535,7 @@ $(document).ready(function() {
     player.loadVideoById(id);
   });
 
-  $('#sidebar-toggle').click(function() {
+  $('.sidebar-toggle').click(function() {
     sidebarAnim();
   });
 
